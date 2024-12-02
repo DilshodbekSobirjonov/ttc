@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTC</title>
+    <link rel="icon" href="bull.png">
+    <style>
+    /* Основные стили */
+    body {
+        width: 100vw;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background: #000;
+    }
+
+    .bubble {
+        position: absolute;
+        z-index: 10;
+        background: rgba(255, 0, 0, .5);
+        width: 50vw;
+        aspect-ratio: 1/1;
+        bottom: -35%;
+        border-radius: 50%;
+        filter: blur(100px);
+    }
+
+    .red {
+        background: rgba(255, 0, 0, .5);
+        right: -10vw;
+        animation: red 10s linear infinite alternate;
+    }
+
+    @keyframes red {
+        0% {
+            right: -10vw;
+        }
+
+        50% {
+            bottom: -70%;
+        }
+
+        100% {
+            right: 70vw;
+        }
+    }
+
+    .green {
+        background: rgba(0, 255, 0, .5);
+        left: -10vw;
+        animation: green 10s linear infinite alternate;
+    }
+
+
+    @keyframes green {
+        0% {
+            left: -10vw;
+        }
+
+        50% {
+            bottom: -70%;
+        }
+
+        100% {
+            left: 70vw;
+        }
+    }
+
+    .container {
+        z-index: 100;
+        width: 100%;
+        height: 99vh;
+        background: linear-gradient(to bottom, #000, #292980);
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        flex-direction: column;
+        /* Градиентный фон */
+        background-size: 100px 100px;
+        /* Размер ячеек */
+        background-image:
+            linear-gradient(to right, #fff 2px, transparent 2px),
+            linear-gradient(to bottom, #fff 2px, transparent 2px);
+        animation: moveUp 10s linear infinite;
+    }
+
+    @keyframes moveUp {
+        0% {
+            background-position: 0 0;
+        }
+
+        100% {
+            background-position: 0 -100px;
+        }
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .social-links a,
+    .main-text {
+        margin: 10px;
+        text-decoration: none;
+        font-size: 24px;
+        color: #333;
+        transition: 0.5s;
+        width: 25vw;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 0, 0, .4);
+        backdrop-filter: blur(5px);
+        color: white;
+        border-radius: 10px;
+        font-weight: 900;
+    }
+
+    .social-links a:hover {
+        background: rgba(255, 0, 0, 1);
+        box-shadow: 0px 0px 2px red,
+            0px 0px 6px red,
+            0px 0px 10px red,
+            0px 0px 15px red;
+    }
+
+    .wrapper {
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .main-text {
+        background: white;
+        color: darkred;
+    }
+
+    img {
+        width: 300px;
+        filter: drop-shadow(0px 0px 5px red);
+        animation: logo 1s linear infinite alternate;
+    }
+
+    @keyframes logo {
+        0% {
+            filter: drop-shadow(0px 0px 5px red);
+        }
+
+        100% {
+            filter: drop-shadow(0px 0px 15px red);
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+
+        body {
+            overflow: hidden;
+        }
+
+        .social-links a,
+        .main-text {
+            width: 80vw;
+        }
+
+        .bubble {
+            position: absolute;
+            z-index: 10;
+            background: rgba(255, 0, 0, .5);
+            width: 70vw;
+            aspect-ratio: 1/1;
+            bottom: -10%;
+            border-radius: 50%;
+            filter: blur(100px);
+        }
+
+        .red {
+            background: rgba(255, 0, 0, .5);
+            right: -10vw;
+            animation: red 10s linear infinite alternate;
+        }
+
+        @keyframes red {
+            0% {
+                right: -20vw;
+            }
+
+            50% {
+                bottom: -20%;
+            }
+
+            100% {
+                right: 70vw;
+            }
+        }
+
+        .green {
+            background: rgba(0, 255, 0, .5);
+            left: -10vw;
+            animation: green 10s linear infinite alternate;
+        }
+
+
+        @keyframes green {
+            0% {
+                left: -20vw;
+            }
+
+            50% {
+                bottom: -20%;
+            }
+
+            100% {
+                left: 70vw;
+            }
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="bull.png" alt="Logo">
+            </div>
+            <div class="social-links">
+                <div class="main-text">TTC social links</div>
+                <a href="https://t.me/+miWJs1IoaDxiZTcy" target="_blank">Telegram</a>
+                <a href="https://www.instagram.com/takhirov_trading_club/profilecard/?igsh=MTNyeWEzeTcxenJ1Ng==" target="_blank">Twitter</a>
+                <a href="https://www.youtube.com/@TAKHIROV_TRADING_CLUBB" target="_blank">YouTube</a>
+                <a href="https://www.instagram.com/takhirov_trading_club/profilecard/?igsh=MTNyeWEzeTcxenJ1Ng==" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@takhirov_trading_club?_r=1&_d=e42a9h027fmmjd&sec_uid=MS4wLjABAAAAJvrsphA_IWG2hMwYcTC5unoL6zoxdJXgFMXSiKMyqvJ9j6mJtH9hP82FmZHg70xB&share_author_id=7440852011215946760&sharer_language=uz&source=h5_t&u_code=ehc8g4jldkc8i2&timestamp=1733126826&user_id=7440852011215946760&sec_user_id=MS4wLjABAAAAJvrsphA_IWG2hMwYcTC5unoL6zoxdJXgFMXSiKMyqvJ9j6mJtH9hP82FmZHg70xB&utm_source=copy&utm_campaign=client_share&utm_medium=android&share_iid=7295652193176405762&share_link_id=e7c5e39e-2db8-4e74-afe8-bce22136af60&share_app_id=1180&ugbiz_name=ACCOUNT&ug_btm=b8727%2Cb0229&social_share_type=5" target="_blank">TikTok</a>
+            </div>
+        </div>
+    </div>
+    <div class="bubble red"></div>
+    <div class="bubble green"></div>
+</body>
+
+</html>
