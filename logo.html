@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Монета</title>
+    <style>
+
+body {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.coin {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  transform-style: preserve-3d;
+  animation: rotate3d 9s linear infinite;
+  transition: all 0.3s;
+}
+
+.coin__front,
+.coin__back {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #3D0000;
+}
+.coin__front:after,
+.coin__back:after {
+  content: "";
+  position: absolute;
+  left: -200px;
+  bottom: 100%;
+  display: block;
+  height: 266.6666666667px;
+  width: 800px;
+  background: #fff;
+  opacity: 0.3;
+  animation: shine linear 2.25s infinite;
+}
+
+.coin__front {
+  background-image: url("ttc.png");
+  background-size: cover;
+  transform: translateZ(1.8181818182px);
+}
+
+.coin__back {
+  background-image: url("ttc.png");
+  background-size: cover;
+  transform: translateZ(-14.2857142857px) rotateY(180deg);
+}
+
+.coin .side {
+  -webkit-transform: translateX(72px);
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.coin .side .circle {
+  height: 400px;
+  width: 5px;
+  position: fixed;
+  top: 0px;
+  left: 124px;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.coin .side .circle:before,
+.coin .side .circle:after {
+  content: "";
+  display: block;
+  height: 39.68px;
+  width: 16px;
+  position: absolute;
+  -webkit-transform: rotateX(84.375deg);
+  background: rgba(50, 50, 50, 1.0);
+}
+
+.coin .side .circle:before {
+  -webkit-transform-origin: top center;
+}
+
+.coin .side .circle:after {
+  bottom: 0;
+  -webkit-transform-origin: center bottom;
+}
+
+.coin .side .circle:nth-child(48) {
+  -webkit-transform: rotateY(90deg) rotateX(180deg);
+}
+
+.coin .side .circle:nth-child(47) {
+  -webkit-transform: rotateY(90deg) rotateX(176.25deg);
+}
+
+.coin .side .circle:nth-child(46) {
+  -webkit-transform: rotateY(90deg) rotateX(172.5deg);
+}
+
+.coin .side .circle:nth-child(45) {
+  -webkit-transform: rotateY(90deg) rotateX(168.75deg);
+}
+
+.coin .side .circle:nth-child(44) {
+  -webkit-transform: rotateY(90deg) rotateX(165deg);
+}
+
+.coin .side .circle:nth-child(43) {
+  -webkit-transform: rotateY(90deg) rotateX(161.25deg);
+}
+
+.coin .side .circle:nth-child(42) {
+  -webkit-transform: rotateY(90deg) rotateX(157.5deg);
+}
+
+.coin .side .circle:nth-child(41) {
+  -webkit-transform: rotateY(90deg) rotateX(153.75deg);
+}
+
+.coin .side .circle:nth-child(40) {
+  -webkit-transform: rotateY(90deg) rotateX(150deg);
+}
+
+.coin .side .circle:nth-child(39) {
+  -webkit-transform: rotateY(90deg) rotateX(146.25deg);
+}
+
+.coin .side .circle:nth-child(38) {
+  -webkit-transform: rotateY(90deg) rotateX(142.55deg);
+}
+
+.coin .side .circle:nth-child(37) {
+  -webkit-transform: rotateY(90deg) rotateX(138.75deg);
+}
+
+.coin .side .circle:nth-child(36) {
+  -webkit-transform: rotateY(90deg) rotateX(135deg);
+}
+
+.coin .side .circle:nth-child(35) {
+  -webkit-transform: rotateY(90deg) rotateX(131.25deg);
+}
+
+.coin .side .circle:nth-child(34) {
+  -webkit-transform: rotateY(90deg) rotateX(127.5deg);
+}
+
+.coin .side .circle:nth-child(33) {
+  -webkit-transform: rotateY(90deg) rotateX(123.75deg);
+}
+
+.coin .side .circle:nth-child(32) {
+  -webkit-transform: rotateY(90deg) rotateX(120deg);
+}
+
+.coin .side .circle:nth-child(31) {
+  -webkit-transform: rotateY(90deg) rotateX(116.25deg);
+}
+
+.coin .side .circle:nth-child(30) {
+  -webkit-transform: rotateY(90deg) rotateX(112.5deg);
+}
+
+.coin .side .circle:nth-child(29) {
+  -webkit-transform: rotateY(90deg) rotateX(108.75deg);
+}
+
+.coin .side .circle:nth-child(28) {
+  -webkit-transform: rotateY(90deg) rotateX(105deg);
+}
+
+.coin .side .circle:nth-child(27) {
+  -webkit-transform: rotateY(90deg) rotateX(101.25deg);
+}
+
+.coin .side .circle:nth-child(26) {
+  -webkit-transform: rotateY(90deg) rotateX(97.5deg);
+}
+
+.coin .side .circle:nth-child(25) {
+  -webkit-transform: rotateY(90deg) rotateX(93.75deg);
+}
+
+.coin .side .circle:nth-child(24) {
+  -webkit-transform: rotateY(90deg) rotateX(90deg);
+}
+
+.coin .side .circle:nth-child(23) {
+  -webkit-transform: rotateY(90deg) rotateX(86.25deg);
+}
+
+.coin .side .circle:nth-child(22) {
+  -webkit-transform: rotateY(90deg) rotateX(82.5deg);
+}
+
+.coin .side .circle:nth-child(21) {
+  -webkit-transform: rotateY(90deg) rotateX(78.75deg);
+}
+
+.coin .side .circle:nth-child(20) {
+  -webkit-transform: rotateY(90deg) rotateX(75deg);
+}
+
+.coin .side .circle:nth-child(19) {
+  -webkit-transform: rotateY(90deg) rotateX(71.25deg);
+}
+
+.coin .side .circle:nth-child(18) {
+  -webkit-transform: rotateY(90deg) rotateX(67.5deg);
+}
+
+.coin .side .circle:nth-child(17) {
+  -webkit-transform: rotateY(90deg) rotateX(63.75deg);
+}
+
+.coin .side .circle:nth-child(16) {
+  -webkit-transform: rotateY(90deg) rotateX(60deg);
+}
+
+.coin .side .circle:nth-child(15) {
+  -webkit-transform: rotateY(90deg) rotateX(56.25deg);
+}
+
+.coin .side .circle:nth-child(14) {
+  -webkit-transform: rotateY(90deg) rotateX(52.5deg);
+}
+
+.coin .side .circle:nth-child(13) {
+  -webkit-transform: rotateY(90deg) rotateX(48.75deg);
+}
+
+.coin .side .circle:nth-child(12) {
+  -webkit-transform: rotateY(90deg) rotateX(45deg);
+}
+
+.coin .side .circle:nth-child(11) {
+  -webkit-transform: rotateY(90deg) rotateX(41.25deg);
+}
+
+.coin .side .circle:nth-child(10) {
+  -webkit-transform: rotateY(90deg) rotateX(37.5deg);
+}
+
+.coin .side .circle:nth-child(9) {
+  -webkit-transform: rotateY(90deg) rotateX(33.75deg);
+}
+
+.coin .side .circle:nth-child(8) {
+  -webkit-transform: rotateY(90deg) rotateX(30deg);
+}
+
+.coin .side .circle:nth-child(7) {
+  -webkit-transform: rotateY(90deg) rotateX(26.25deg);
+}
+
+.coin .side .circle:nth-child(6) {
+  -webkit-transform: rotateY(90deg) rotateX(22.5deg);
+}
+
+.coin .side .circle:nth-child(5) {
+  -webkit-transform: rotateY(90deg) rotateX(18.75deg);
+}
+
+.coin .side .circle:nth-child(4) {
+  -webkit-transform: rotateY(90deg) rotateX(15deg);
+}
+
+.coin .side .circle:nth-child(3) {
+  -webkit-transform: rotateY(90deg) rotateX(11.25deg);
+}
+
+.coin .side .circle:nth-child(2) {
+  -webkit-transform: rotateY(90deg) rotateX(7.5deg);
+}
+
+.coin .side .circle:nth-child(1) {
+  -webkit-transform: rotateY(90deg) rotateX(3.75deg);
+}
+
+.coin__shadow {
+  position: absolute;
+  width: 400px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000;
+  box-shadow: 0 0 100px 100px #000;
+  opacity: 0.125;
+  transform: rotateX(90deg) translateZ(-440px) scale(0.5);
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+@keyframes shine {
+    0%, 15% {
+        transform: translateY(800px) rotate(-40deg);
+    }
+    50% {
+        transform: translateY(-400px) rotate(-40deg);
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="coin">
+        <div class="coin__front"></div>
+        <div class="side">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="coin__back"></div>
+        <div class="coin__shadow"></div>
+    </div>
+</body>
+
+</html>
